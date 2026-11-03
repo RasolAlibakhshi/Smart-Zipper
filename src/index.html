@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:">
+<title>Smart Zipper</title>
+<link rel="stylesheet" href="style.css"></head><body>
+
+<section id="welcome" class="screen">
+  <button class="ghost lang langBtn"></button>
+  <div class="hero">
+    <h1 data-i18n="appTitle"></h1>
+    <p data-i18n="tagline"></p>
+    <div id="drop" class="drop">
+      <div class="big">📂</div>
+      <div data-i18n="dropMain"></div>
+      <div class="muted" data-i18n="dropSub"></div>
+    </div>
+    <div id="recentBox" hidden>
+      <h3 data-i18n="recentTitle"></h3>
+      <div id="recent"></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="screen" hidden>
+  <header class="top">
+    <button id="back" class="ghost" data-i18n="back"></button>
+    <b id="projName"></b>
+    <span id="rootPath" class="muted ltr"></span>
+    <button class="ghost langBtn lang-top"></button>
+  </header>
+
+  <div class="presets">
+    <span data-i18n="preset"></span>
+    <button class="chip on" data-preset="code" data-i18n="pCode"></button>
+    <button class="chip" data-preset="all" data-i18n="pAll"></button>
+    <span class="sep"></span>
+    <label class="chk"><input type="checkbox" id="oTests"> <span data-i18n="noTests"></span></label>
+    <label class="chk"><input type="checkbox" id="oGit" checked> <span data-i18n="useGit"></span></label>
+    <label class="chk"><input type="checkbox" id="oBig" checked> <span data-i18n="skipBigPre"></span>
+      <input id="bigMB" type="number" value="1" min="0.01" step="0.1" class="num ltr"> <span data-i18n="mb"></span></label>
+    <button id="advBtn" class="ghost" data-i18n="advanced"></button>
+  </div>
+
+  <div id="adv" class="adv" hidden>
+    <label><span data-i18n="pat"></span> <textarea id="ig" class="ltr" rows="2" placeholder="docs, *.svg, src/legacy"></textarea></label>
+    <label><span data-i18n="extF"></span> <input id="ext" class="ltr" placeholder="js,ts,py"></label>
+    <label><span data-i18n="sizeF"></span> <input id="minS" type="number" min="0" step="0.1" class="num ltr"> – <input id="maxS" type="number" min="0" step="0.1" class="num ltr"></label>
+    <label><span data-i18n="dateF"></span> <input id="from" type="date"> – <input id="to" type="date"></label>
+  </div>
+
+  <div class="body">
+    <div class="treeWrap">
+      <div class="treeBar">
+        <input id="q">
+        <button id="expandAll" class="ghost" data-i18n="expandAll"></button>
+        <button id="collapseAll" class="ghost" data-i18n="collapseAll"></button>
+        <button id="selAll" class="ghost" data-i18n="reset"></button>
+        <button id="selNone" class="ghost" data-i18n="none"></button>
+      </div>
+      <div id="tree" class="tree"></div>
+    </div>
+    <aside class="side">
+      <div id="warns"></div>
+      <h4 data-i18n="ignoredHdr"></h4>
+      <div id="ignList" class="ignList"></div>
+      <h4 id="pvTitle" data-i18n="preview"></h4>
+      <pre id="pv" class="ltr muted"></pre>
+    </aside>
+  </div>
+
+  <footer class="bar">
+    <div class="sum">
+      <div id="stat" class="stat"></div>
+      <div id="models" class="models"></div>
+    </div>
+    <div class="acts">
+      <label class="chk"><input type="checkbox" id="oStruct" checked> <span data-i18n="addStruct"></span></label>
+      <div id="pg" class="pgwrap" hidden><div class="pgfill"></div><span class="pgtxt"></span></div>
+      <button id="mdBtn" class="sec" data-i18n="mdBtn"></button>
+      <button id="zip" class="pri" data-i18n="zipBtn"></button>
+    </div>
+  </footer>
+</section>
+
+<div id="toast" class="toast" hidden></div>
+<script src="renderer.js"></script></body></html>
