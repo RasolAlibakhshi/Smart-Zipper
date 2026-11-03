@@ -43,7 +43,7 @@ AI chats have limits: file size, context window, and your patience. Zipping a wh
 ## Quick start
 
 ```bash
-git clone <https://github.com/RasolAlibakhshi/Smart-Zipper.git> smart-zipper
+git clone https://github.com/RasolAlibakhshi/Smart-Zipper.git 
 cd smart-zipper
 npm install
 npm start

@@ -48,12 +48,14 @@
             "x64"
           ]
         }
-      ]
+      ],
+      "artifactName": "SmartZipper-${version}-win-${arch}-${target}.${ext}"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true
+      "createDesktopShortcut": true,
+      "artifactName": "SmartZipper-${version}-win-${arch}-setup.${ext}"
     },
     "linux": {
       "icon": "build/icon.png",
@@ -64,6 +66,9 @@
       ],
       "maintainer": "Smart Zipper <app@smartzipper.local>",
       "synopsis": "Smart project zipper for AI"
+    },
+    "portable": {
+      "artifactName": "SmartZipper-${version}-win-${arch}-portable.${ext}"
     }
   }
 }
